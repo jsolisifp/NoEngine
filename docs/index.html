@@ -1,0 +1,1213 @@
+<html>
+<head>
+<title>NoEntiendo: Una librería pedagógica para la programación de videojuegos 2D basada en SFML</title>
+<link rel="icon" type="image/png" sizes="16x16" href="icono.png">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+<meta charset="UTF-8">
+</head>
+<body>
+<div class="pageBox">
+<div class="indexBox">
+<div class="header">
+<div class="title">NoEntiendo</div>
+</div>
+<h1><a href="#00-00">Referencia</a><div class="version">Versión 2.31</div></h1>
+<h2><a href="#00-00-00">Tipos</a></h2>
+<div class="function"><a href="#00-00-01">NOE_Byte</a></div>
+<h2><a href="#00-01-00">Constantes</a></h2>
+<div class="function"><a href="#00-01-01">noe_tileVacio</a></div>
+<div class="function"><a href="#00-01-02">noe_tileColisionVacio</a></div>
+<h2><a href="#00-02-00">Enumeraciones</a></h2>
+<div class="function"><a href="#00-02-01">NOE_Tecla</a></div>
+<h2><a href="#00-03-00">Funciones principales</a></h2>
+<div class="function"><a href="#00-03-01">NOE_Inicia</a></div>
+<div class="function"><a href="#00-03-02">NOE_Actualiza</a></div>
+<div class="function"><a href="#00-03-03">NOE_Finaliza</a></div>
+<h2><a href="#00-04-00">Pantalla</a></h2>
+<div class="function"><a href="#00-04-01">NOE_LimpiaPantalla</a></div>
+<div class="function"><a href="#00-04-02">NOE_MuestraPantalla</a></div>
+<div class="function"><a href="#00-04-03">NOE_ObtenAnchoPantalla</a></div>
+<div class="function"><a href="#00-04-04">NOE_ObtenAltoPantalla</a></div>
+<div class="function"><a href="#00-04-05">NOE_PonCursor</a></div>
+<div class="function"><a href="#00-04-06">NOE_PonMostrarCursor</a></div>
+<div class="function"><a href="#00-04-07">NOE_PonTamanyoCursor</a></div>
+<div class="function"><a href="#00-04-08">NOE_PonDesplazamientoCursor</a></div>
+<h2><a href="#00-05-00">Entrada</a></h2>
+<div class="function"><a href="#00-05-01">NOE_ObtenEntrada</a></a></div>
+<div class="function"><a href="#00-05-02">NOE_LimpiaEntrada</a></div>
+<h2><a href="#00-06-00">Graficos</a></h2>
+<div class="function"><a href="#00-06-01">NOE_ObtenPosicionCamaraX</a></div>
+<div class="function"><a href="#00-06-02">NOE_ObtenPosicionCamaraY</a></div>
+<div class="function"><a href="#00-06-03">NOE_PonPosicionCamara</a></div>
+<div class="function"><a href="#00-06-04">NOE_ObtenTile</a></div>
+<div class="function"><a href="#00-06-05">NOE_PonTile</a></div>
+<div class="function"><a href="#00-06-06">NOE_LimpiaTilemap</a></div>
+<div class="function"><a href="#00-06-07">NOE_DibujaTilemap</a></div>
+<div class="function"><a href="#00-06-08">NOE_DibujaSprite</a></div>
+<div class="function"><a href="#00-06-09">NOE_DibujaDecorado</a></div>
+<div class="function"><a href="#00-06-10">NOE_DibujaCaracter</a></div>
+<div class="function"><a href="#00-06-11">NOE_DibujaTexto</a></div>
+<div class="function"><a href="#00-06-12">NOE_DibujaDisco</a></div>
+<div class="function"><a href="#00-06-13">NOE_DibujaCaja</a></div>
+<div class="function"><a href="#00-06-14">NOE_DibujaForma</a></div>
+<div class="function"><a href="#00-06-15">NOE_ConviertePantallaAMundoX</a></div>
+<div class="function"><a href="#00-06-16">NOE_ConviertePantallaAMundoY</a></div>
+<div class="function"><a href="#00-06-17">NOE_ConvierteMundoAPantallaX</a></div>
+<div class="function"><a href="#00-06-18">NOE_ConvierteMundoAPantallaY</a></div>
+<div class="function"><a href="#00-06-19">NOE_ConvierteMundoATileX</a></div>
+<div class="function"><a href="#00-06-20">NOE_ConvierteMundoATileY</a></div>
+<div class="function"><a href="#00-06-21">NOE_ConvierteTileAMundoX</a></div>
+<div class="function"><a href="#00-06-22">NOE_ConvierteTileAMundoY</a></div>
+<h2><a href="#00-07-00">Sistema</a></h2>
+<div class="function"><a href="#00-07-01">NOE_Espera</a></div>
+<div class="function"><a href="#00-07-02">NOE_ObtenTiempoDesdeActualizacion</a></div>
+<div class="function"><a href="#00-07-03">NOE_ObtenNumeroAleatorio</a></div>
+<h2><a href="#00-08-00">Colisión</a></h2>
+<div class="function"><a href="#00-08-01">NOE_ObtenTileColision</a></div>
+<div class="function"><a href="#00-08-02">NOE_PonTileColision</a></div>
+<div class="function"><a href="#00-08-03">NOE_LimpiaMapaColision</a></div>
+<div class="function"><a href="#00-08-04">NOE_ColisionDiscoDisco</a></div>
+<div class="function"><a href="#00-08-05">NOE_ColisionCajaCaja</a></div>
+<div class="function"><a href="#00-08-06">NOE_ColisionCajaDisco</a></div>
+<div class="function"><a href="#00-08-07">NOE_ColisionCajaMapaColision</a></div>
+<div class="function"><a href="#00-08-08">NOE_ColisionDiscoMapaColision</a></div>
+<h2><a href="#00-09-00">Controles</a></h2>
+<div class="function"><a href="#00-09-01">NOE_ObtenTeclaPulsada</a></div>
+<div class="function"><a href="#00-09-02">NOE_ObtenTeclaArriba</a></div>
+<div class="function"><a href="#00-09-03">NOE_ObtenTeclaAbajo</a></div>
+<div class="function"><a href="#00-09-04">NOE_ObtenPosicionRatonX</a></div>
+<div class="function"><a href="#00-09-05">NOE_ObtenPosicionRatonY</a></div>
+<div class="function"><a href="#00-09-06">NOE_ObtenDesplazamientoRatonX</a></div>
+<div class="function"><a href="#00-09-07">NOE_ObtenDesplazamientoRatonY</a></div>
+<div class="function"><a href="#00-09-08">NOE_ObtenBotonRaton</a></div>
+<h2><a href="#00-10-00">Sonido</a></h2>
+<div class="function"><a href="#00-10-01">NOE_ReproduceMusica</a></div>
+<div class="function"><a href="#00-10-02">NOE_ParaMusica</a></div>
+<div class="function"><a href="#00-10-03">NOE_ReproduceSonido</a></div>
+<div class="function"><a href="#00-10-04">NOE_ParaSonido</a></div>
+<h2><a href="#00-11-00">Datos</a></h2>
+<div class="function"><a href="#00-11-01">NOE_ObtenNumeroDatasets</a></div>
+<div class="function"><a href="#00-11-02">NOE_RedimensionaDataset</a></div>
+<div class="function"><a href="#00-11-03">NOE_ObtenTamanyoDataset</a></div>
+<div class="function"><a href="#00-11-04">NOE_LimpiaDataset</a></div>
+<div class="function"><a href="#00-11-05">NOE_CopiaDataset</a></div>
+<div class="function"><a href="#00-11-06">NOE_RecuperaDatosDataset</a></div>
+<div class="function"><a href="#00-11-07">NOE_AlmacenaDatosDataset</a></div>
+<div class="function"><a href="#00-11-08">NOE_RecuperaEnteroDataset</a></div>
+<div class="function"><a href="#00-11-09">NOE_AlmacenaEnteroDataset</a></div>
+<div class="function"><a href="#00-11-10">NOE_RecuperaTextoDataset</a></div>
+<div class="function"><a href="#00-11-11">NOE_AlmacenaTextoDataset</a></div>
+<div class="function"><a href="#00-11-12">NOE_GuardaDatasetAhora</a></div>
+<div class="function"><a href="#00-11-13">NOE_ImprimeDataset</a></div>
+<h1><a href="#01">Licencias</a></h1>
+<h2><a href="#01-01-00">Librería NoEntiendo</a></h2>
+<h2><a href="#01-02-00">Músicas</a></h2>
+<h2><a href="#01-03-00">Fuentes</a></h2>
+</div>
+<div class="contentBox">
+<div class="header">
+<div class="title">NoEntiendo</div>
+<div class="tagline">Una librería pedagógica para la programación de videojuegos 2D basada en SFML</div>
+</div>
+<div class="body">
+<h1 id="00-00"><div>Referencia</div><div class="version">Versión 2.31</div></h1>
+<h2 id="00-00-00">Tipos</h2>
+<div id="00-00-01" class="function">typedef unsigned char NOE_Byte</div>
+<div class="definition">
+<p>Representación de un byte</p>
+</div>
+<h2 id="00-01-00">Constantes</h2>
+<div id="00-01-01" class="function">int noe_tileVacio</div>
+<div class="definition">
+<p>Valor de los tiles vacíos del tilemap</p>
+</div>
+<div id="00-01-02" class="function">int noe_tileColisionVacio</div>
+<div class="definition">
+<p>Valor de los tiles vacíos del collisionMap</p>
+</div>
+<h2 id="00-02-00">Enumeraciones</h2>
+<div id="00-02-01" class="function">NOE_Tecla</div>
+<div class="definition">
+<p>Define un identificador para cada tecla.</p>
+<p class="params">Valores</p>
+<p class="param">NOE_TECLA_ESPACIO</p>
+<p class="param">NOE_TECLA_A</p>
+<p class="param">NOE_TECLA_B</p>
+<p class="param">NOE_TECLA_C</p>
+<p class="param">NOE_TECLA_D</p>
+<p class="param">NOE_TECLA_E</p>
+<p class="param">NOE_TECLA_F</p>
+<p class="param">NOE_TECLA_G</p>
+<p class="param">NOE_TECLA_H</p>
+<p class="param">NOE_TECLA_I</p>
+<p class="param">NOE_TECLA_J</p>
+<p class="param">NOE_TECLA_K</p>
+<p class="param">NOE_TECLA_L</p>
+<p class="param">NOE_TECLA_M</p>
+<p class="param">NOE_TECLA_N</p>
+<p class="param">NOE_TECLA_O</p>
+<p class="param">NOE_TECLA_P</p>
+<p class="param">NOE_TECLA_Q</p>
+<p class="param">NOE_TECLA_R</p>
+<p class="param">NOE_TECLA_S</p>
+<p class="param">NOE_TECLA_T</p>
+<p class="param">NOE_TECLA_U</p>
+<p class="param">NOE_TECLA_V</p>
+<p class="param">NOE_TECLA_W</p>
+<p class="param">NOE_TECLA_X</p>
+<p class="param">NOE_TECLA_Y</p>
+<p class="param">NOE_TECLA_Z</p>
+<p class="param">NOE_TECLA_1</p>
+<p class="param">NOE_TECLA_2</p>
+<p class="param">NOE_TECLA_3</p>
+<p class="param">NOE_TECLA_4</p>
+<p class="param">NOE_TECLA_5</p>
+<p class="param">NOE_TECLA_6</p>
+<p class="param">NOE_TECLA_7</p>
+<p class="param">NOE_TECLA_8</p>
+<p class="param">NOE_TECLA_9</p>
+<p class="param">NOE_TECLA_0</p>
+<p class="param">NOE_TECLA_ESCAPE</p>
+<p class="param">NOE_TECLA_IZQUIERDA</p>
+<p class="param">NOE_TECLA_DERECHA</p>
+<p class="param">NOE_TECLA_ARRIBA</p>
+<p class="param">NOE_TECLA_ABAJO</p>
+<p class="param">NOE_TECLA_ENTRAR</p>
+<p class="param">NOE_TECLA_BORRA_ATRAS</p>
+</div>
+<h2 id="00-03-00">Funciones principales</h2>
+<div id="00-03-01" class="function">bool NOE_Inicia()</div>
+<div class="definition">
+<p>Inicia el entorno NoEntiendo según la configuración presente en el fichero configuracion.ini.</p>
+<p>Debe llamarse una única vez al inicio del programa.</p>
+<p class="returns">Devuelve:</p>
+<p class="return">Cierto si el entorno se ha podido iniciar correctamente.</p>
+<p class="return">Falso en caso de error.</p>
+</p>
+</div>
+<div id="00-03-02" class="function">void NOE_Actualiza()</div>
+<div class="definition">
+<p>Actualiza el entorno NoEntiendo.</p>
+<p>Debe llamarse periódicamente durante la ejecución del programa.</p>
+</div>
+<div id="00-03-03" class="function">void NOE_Finaliza()</div>
+<div class="definition">
+<p>Finaliza el entorno NoEntiendo.</p>
+<p>Debe llamarse una única vez al final del programa</p>
+</div>
+<h2 id="00-04-00">Pantalla</h2>
+<div id="00-04-01" class="function">void NOE_LimpiaPantalla(int r, int g, int b)</div>
+<div class="definition">
+<p>Asigna un mismo color a todos los píxels del buffer de la pantalla</p>
+<p class="params">Parámetros</p>
+<p class="param">r: Componente roja del color</p>
+<p class="param">g: Componente verde del color</p>
+<p class="param">b: Componente azul del color</p>
+</div>
+<div id="00-04-02" class="function">void NOE_MuestraPantalla()</div>
+<div class="definition">
+<p>Hace visible el contenido del buffer de pantalla</p>
+</div>
+<div id="00-04-03" class="function">int NOE_ObtenAnchoPantalla()</div>
+<div class="definition">
+<p>Permite obtener el ancho de la pantalla</p>
+<p class="returns">Devuelve:</p>
+<p class="return">Ancho de la pantalla en unidades de pantalla.</p>
+</div>
+<div id="00-04-04" class="function">int NOE_ObtenAltoPantalla()</div>
+<div class="definition">
+<p>Permite obtener el alto de la pantalla</p>
+<p class="returns">Devuelve:</p>
+<p class="return">Alto de la pantalla en unidades de pantalla.</p>
+</div>
+<div id="00-04-05" class="function">void NOE_PonCursor(int cursor)</div>
+<div class="definition">
+<p>Establece el tipo de cursor que se mostrará</p>
+<p class="params">Parámetros</p>
+<p class="param">cursor: Índice del cursor que se mostrará</p>
+</div>
+<div id="00-04-06" class="function">void NOE_PonMostrarCursor(bool mostrar)</div>
+<div class="definition">
+<p>Establece si se mostará o no un cursor</p>
+<p class="params">Parámetros</p>
+<p class="param">mostrar: Si se ha de mostrar el cursor o no</p>
+</div>
+<div id="00-04-07" class="function">void NOE_PonTamanyoCursor(int ancho, int alto)</div>
+<div class="definition">
+<p>Cambia el tamaño del cursor</p>
+<p class="params">Parámetros</p>
+<p class="param">ancho: Ancho del cursor en coordenadas de pantalla</p>
+<p class="param">alto: Alto del cursor en coordenadas de pantalla</p>
+</div>
+<div id="00-04-08" class="function">void NOE_PonDesplazamientoCursor(int x, int y)</div>
+<div class="definition">
+<p>Establece el desplazamiento que se aplicará al cursor respecto a la posición del ratón</p>
+<p class="params">Parámetros</p>
+<p class="param">x: Desplazamiento en X en coordenadas de pantalla</p>
+<p class="param">y: Desplazamiento en Y en coordenadas de pantalla</p>
+</div>
+<h2 id="00-05-00">Entrada</h2>
+<div id="00-05-01" class="function">const char *NOE_ObtenEntrada()</div>
+<div class="definition">
+<p>Permite consultar el contenido del buffer de entrada</p>
+<p class="returns">Devuelve:</p>
+<p class="return">Cadena de carácteres contenida en el buffer.</p>
+</div>
+<div id="00-05-02" class="function">void NOE_LimpiaEntrada();</div>
+<div class="definition">
+<p>Vacía el contenido del buffer de entrada</p>
+</div>
+<h2 id="00-06-00">Graficos</h2>
+<div id="00-06-01" class="function">int NOE_ObtenPosicionCamaraX()</div>
+<div class="definition">
+<p>Permite consultar la posición X de la cámara</p>
+<p class="returns">Devuelve:</p>
+<p class="return">La posición X de la cámara en coordenadas de mundo</p>
+</div>
+<div id="00-06-02" class="function">int NOE_ObtenPosicionCamaraY()</div>
+<div class="definition">
+<p class="param">Permite consultar la posición Y de la cámara</p>
+<p class="returns">Devuelve:</p>
+<p class="return">La posición Y de la cámara en coordenadas de mundo</p>
+</div>
+<div id="00-06-03" class="function">void NOE_PonPosicionCamara(int x, int y)</div>
+<div class="definition">
+<p>Permite colocar la cámara en una posición</p>
+<p class="params">Parámetros:</p>
+<p class="param">x: Posición X en que queremos colocar la cámara, en coordenadas de mundo.</p>
+<p class="param">y: Posición Y en que queremos colocar la cámara, en coordenadas de mundo.</p>
+</div>
+<div id="00-06-04" class="function">int NOE_ObtenTile(int tilemap, int posicionX, int posicionY)</div>
+<div class="definition">
+<p>Permite consultar el tipo de tile de una celda de un tilemap</p>
+<p class="params">Parámetros:</p>
+<p class="param">tilemap: Índice de tilemap de la celda.</p>
+<p class="param">posicionX: Posición X de la celda, en coordenadas de tilemap.</p>
+<p class="param">posicionY: Posición Y de la celda, en coordenadas de tilemap.</p>
+<p class="returns">Devuelve:</p>
+<p class="return">Tipo de tile contenido en la celda</p>
+</div>
+<div id="00-06-05" class="function">void NOE_PonTile(int tilemap, int posicionX, int posicionY, int tile)</div>
+<div class="definition">
+<p>Permite asignar un tipo de tile a una celda de un tilemap</p>
+<p class="params">Parámetros:</p>
+<p class="param">tilemap: Índice de tilemap de la celda a asignar.</p>
+<p class="param">posicionX: Posición X de la celda a asignar, en coordenadas de tilemap.</p>
+<p class="param">posicionY: Posición Y de la celda asignar, en coordenadas de tilemap.</p>
+<p class="param">tile: Tipo de tile que queremos asignar.</p>
+</div>
+<div id="00-06-06" class="function">void NOE_LimpiaTilemap(int tilemap, int tile)</div>
+<div class="definition">
+<p class="param">Asigna un mismo tipo de tile a todas las celdas de un tilemap</p>
+<p class="param">tilemap: Índice de tilemap cuyas celdas queremos asignar.</p>
+<p class="param">tile: Tipo de tile que queremos asignar a las celdas.</p>
+</div>
+<div id="00-06-07" class="function">void NOE_DibujaTilemap(int numTilemap)</div>
+<div class="definition">
+<p>Dibuja un tilemap en el buffer de pantalla .</p>
+<p>Se dibujará en las coordenadas de mundo (0, 0).</p>
+<p class="params">Parámetros:</p>
+<p class="param">tilemap: Índice del tilemap a dibujar.</p>
+</div>
+<div id="00-06-08" class="function">void NOE_DibujaSprite(int sprite, int x, int y, int ancho, int alto, bool invertirX, bool invertirY)</div>
+<div class="definition">
+<p>Dibuja un sprite en el buffer de pantalla</p>
+<p class="params">Parámetros:</p>
+<p class="param">sprite: Índice del sprite a dibujar.</p>
+<p class="param">x: Posición X donde se dibujará el sprite en coordenadas de mundo.</p>
+<p class="param">y: Posición Y donde se dibujará el sprite en coordenadas de mundo.</p>
+<p class="param">ancho: Ancho con que se dibujará el sprite en coordenadas de mundo o -1 para dibujarlo con el ancho original del sprite.</p>
+<p class="param">alto: Alto con que se dibujará el sprite en coordenadas de mundo o -1 para dibujarlo con el ancho original del sprite.</p>
+<p class="param">invertirX: 1 si queremos invertir horizontalmente el sprite y 0 si no.</p>
+<p class="param">invertirY: 1 si queremos invertir verticalmente el sprite y 0 si no.</p>
+</div>
+<div id="00-06-09" class="function">void NOE_DibujaDecorado(int decorado)</div>
+<div class="definition">
+<p>Dibuja un decorado en el buffer de pantalla.</p>
+<p>El decorado se dibujará en las coordenadas de pantalla (0 0) y se escalará hasta cubrirla por completo</p>
+<p class="params">Parámetros:</p>
+<p class="param">decorado: Índice del decorado a dibujar.</p>
+</div>
+<div id="00-06-10" class="function">void NOE_DibujaCaracter(char caracter, int x, int y, int ancho, int alto, int font);
+</div>
+<div class="definition">
+<p>Dibuja un carácter en el buffer de pantalla.</p>
+<p class="params">Parámetros:</p>
+<p class="param">caracter: Carácter a dibujar.</p>
+<p class="param">x: Posición X en que se dibujará el carácter en coordenadas de pantalla.</p>
+<p class="param">y: Posición Y en que se dibujará el carácter en coordenadas de pantalla.</p>
+<p class="param">ancho: Ancho con que se dibujará el carácter en coordenadas de pantalla o -1 para dibujarlo con el ancho original del carácter en la fuente especificada.</p>
+<p class="param">alto: Alto con que se dibujará el carácter en coordenadas de pantalla o -1 para dibujarlo con el alto original del carácter en la fuente especificada.</p>
+<p class="param">fuente: Índice de la fuente con que se dibujará el carácter.</p>
+</div>
+<div id="00-06-11" class="function">void NOE_DibujaTexto(const char texto[], int x, int y, int anchoCaracter, int altoCaracter, int font)</div>
+<div class="definition">
+<p>Dibuja una cadena de texto en el buffer de pantalla.</p>
+<p class="params">Parámetros:</p>
+<p class="param">texto: Cadena a dibujar.</p>
+<p class="param">x: Posición X en que se dibujará la cadena en coordenadas de pantalla.</p>
+<p class="param">y: Posición Y en que se dibujará la cadena en coordenadas de pantalla.</p>
+<p class="param">ancho: Ancho con que se dibujarán los carácteres en coordenadas de pantalla o -1 para dibujarlo con el ancho original de los carácteres en la fuente especificada.</p>
+<p class="param">alto: Alto con que se dibujarán los carácteres en coordenadas de pantalla o -1 para dibujarlo con el alto original de los carácteres en la fuente especificada.</p>
+<p class="param">fuente: Índice de la fuente con que se dibujará el carácter.</p>
+</div>
+<div  id="00-06-12" class="function">void NOE_DibujaDisco(int x, int y, int radio, int r, int g, int b)</div>
+<div class="definition">
+<p>Dibuja un disco en el buffer de pantalla</p>
+<p class="params">Parámetros:</p>
+<p class="param">x: Posición X del centro del disco, en el sistema de coordenadas del mundo.</p>
+<p class="param">y: Posición Y del centro del disco, en el sistema de coordenadas del mundo.</p>
+<p class="param">radio: Radio del disco en el sistema del mundo.</p>
+<p class="param">r: Componente roja del color con que se dibujará el disco.</p>
+<p class="param">g: Componente verde del color con que se dibujará el disco.</p>
+<p class="param">b: Componente azul del color con que se dibujará el disco.</p>
+</div>
+<div  id="00-06-13" class="function">void NOE_DibujaCaja(int x, int y, int ancho, int alto, int r, int g, int b)</div>
+<div class="definition">
+<p>Dibuja una caja en el buffer de pantalla</p>
+<p class="params">Parámetros:</p>
+<p class="param">x: Posición X de la caja, en el sistema de coordenadas del mundo.</p>
+<p class="param">y: Posición Y de la caja, en el sistema de coordenadas del mundo.</p>
+<p class="param">ancho: Ancho de la caja en el sistema del mundo.</p>
+<p class="param">alto: Alto de la caja en el sistema del mundo.</p>
+<p class="param">r: Componente roja del color con que se dibujará la forma.</p>
+<p class="param">g: Componente verde del color con que se dibujará la forma.</p>
+<p class="param">b: Componente azul del color con que se dibujará la forma.</p>
+</div>
+<div  id="00-06-14" class="function">void NOE_DibujaForma(int forma, int x, int y, int ancho, int alto, int r, int g, int b)</div>
+<div class="definition">
+<p>Dibuja una forma convexa en el buffer de pantalla</p>
+<p class="params">Parámetros:</p>
+<p class="param">forma: Índice de la forma que se dibujará.</p>
+<p class="param">x: Posición X de la esquina superior izquierda de la caja contenedora de la forma, en el sistema de coordenadas del mundo.</p>
+<p class="param">y: Posición Y de la esquina superior izquierda de la caja contenedora de la forma, en el sistema de coordenadas del mundo.</p>
+<p class="param">ancho: Ancho de la caja contenedora de la forma en el sistema del mundo.</p>
+<p class="param">alto: Alto de la caja contenedora de la forma en el sistema del mundo..</p>
+<p class="param">r: Componente roja del color con que se dibujará la forma.</p>
+<p class="param">g: Componente verde del color con que se dibujará la forma.</p>
+<p class="param">b: Componente azul del color con que se dibujará la forma.</p>
+</div>
+<div  id="00-06-15" class="function">int NOE_ConviertePantallaAMundoX(int x)</div>
+<div class="definition">
+<p>Convierte una coordenada X en sistema de pantalla al sistema mundo</p>
+<p class="params">Parámetros:</p>
+<p class="param">x: Coordenada X a convertir.</p>
+<p class="returns">Devuelve:</p>
+<p class="return">Coordenada X en sistema mundo.</p>
+</div>
+<div  id="00-06-16" class="function">int NOE_ConviertePantallaAMundoY(int y)</div>
+<div class="definition">
+<p>Convierte una coordenada Y en sistema de pantalla al sistema mundo</p>
+<p class="params">Parámetros:</p>
+<p class="param">y: Coordenada Y a convertir.</p>
+<p class="returns">Devuelve:</p>
+<p class="return">Coordenada Y en sistema mundo.</p>
+</div>
+<div  id="00-06-17" class="function">int NOE_ConvierteMundoAPantallaX(int x)</div>
+<div class="definition">
+<p>Convierte una coordenada X en sistema de mundo al sistema de pantalla</p>
+<p class="params">Parámetros:</p>
+<p class="param">x: Coordenada X a convertir.</p>
+<p class="returns">Devuelve:</p>
+<p class="return">Coordenada X en sistema de pantalla.</p>
+</div>
+<div  id="00-06-18" class="function">int NOE_ConvierteMundoAPantallaY(int y)</div>
+<div class="definition">
+<p>Convierte una coordenada Y en sistema de mundo al sistema de pantalla</p>
+<p class="params">Parámetros:</p>
+<p class="param">y: Coordenada Y a convertir.</p>
+<p class="returns">Devuelve:</p>
+<p class="return">Coordenada Y en sistema de pantalla.</p>
+</div>
+<div  id="00-06-19" class="function">int NOE_ConvierteMundoATileX(int x)</div>
+<div class="definition">
+<p>Convierte una coordenada X en sistema de mundo al sistema del tilemap</p>
+<p class="params">Parámetros:</p>
+<p class="param">x: Coordenada X a convertir.</p>
+<p class="returns">Devuelve:</p>
+<p class="return">Coordenada X en sistema de tilemap.</p>
+</div>
+<div  id="00-06-20" class="function">int NOE_ConvierteMundoATileY(int y)</div>
+<div class="definition">
+<p>Convierte una coordenada Y en sistema de mundo al sistema del tilemap</p>
+<p class="params">Parámetros:</p>
+<p class="param">y: Coordenada Y a convertir.</p>
+<p class="returns">Devuelve:</p>
+<p class="return">Coordenada Y en sistema de tilemap.</p>
+</div>
+<div  id="00-06-21" class="function">int NOE_ConvierteTileAMundoX(int x)</div>
+<div class="definition">
+<p>Convierte una coordenada X en sistema de tilemap al sistema de mundo</p>
+<p class="params">Parámetros:</p>
+<p class="param">x: Coordenada X a convertir.</p>
+<p class="returns">Devuelve:</p>
+<p class="return">Coordenada X en sistema de mundo.</p>
+</div>
+<div  id="00-06-22" class="function">int NOE_ConvierteTileAMundoY(int y)</div>
+<div class="definition">
+<p>Convierte una coordenada Y en sistema de tilemap al sistema de mundo</p>
+<p class="params">Parámetros:</p>
+<p class="param">x: Coordenada Y a convertir.</p>
+<p class="returns">Devuelve:</p>
+<p class="return">Coordenada Y en sistema de mundo.</p>
+</div>
+<h2 id="00-07-00">Sistema</h2>
+<div  id="00-07-01" class="function">void NOE_Espera(int tiempo)</div>
+<div class="definition">
+<p>Pone el programa en espera</p>
+<p class="params">Parámetros:</p>
+<p class="param">tiempo: Tiempo en milisegundos que el programa permanecerá en espera.</p>
+</div>
+<div  id="00-07-02" class="function">int NOE_ObtenTiempoDesdeActualizacion()</div>
+<div class="definition">
+<p>Devuelve el tiempo transcurrido entre la última llamada a NOE_Actualiza y la penúltima, o entre la última llamada a NOE_Actualiza y la llamada a NOE_Inicia, si sólo se ha producido una llamada a NOE_Actualiza.</p>
+<p class="returns">Devuelve:</p>
+<p class="return">Tiempo transcurrido en milisegundos.</p>
+</div>
+<div  id="00-07-03" class="function">int NOE_ObtenNumeroAleatorio(int minimo, int maximo)</div>
+<div class="definition">
+<p>Permite obtener un número aleatorio</p>
+<p class="params">Parámetros:</p>
+<p class="param">minimo: Número mínimo que podemos obtener</p>
+<p class="param">maximo: Número mínimo que podemos obtener</p>
+<p class="returns">Devuelve:</p>
+<p class="return">Un número al azar entre el mínimo y el máximo indicados, ambos incluidos</p>
+</div>
+
+<h2 id="00-08-00">Colisión</h2>
+<div  id="00-08-01" class="function">int NOE_ObtenTileColision(int posicionX, int posicionY)</div>
+<div  id="00-08-02" class="function">void NOE_PonTileColision(int posicionX, int posicionY, int colision)</div>
+<div  id="00-08-03" class="function">void NOE_LimpiaMapaColision()</div>
+<div  id="00-08-04" class="function">bool NOE_ColisionDiscoDisco(int pX1, int pY1, int radio1, int pX2, int pY2, int radio2)</div>
+<div  id="00-08-05" class="function">bool NOE_ColisionCajaCaja(int pX1, int pY1, int ancho1, int alto1, int pX2, int pY2, int ancho2, int alto2)</div>
+<div  id="00-08-06" class="function">bool NOE_ColisionCajaDisco(int pX1, int pY1, int ancho1, int alto1, int pX2, int pY2, int radio2)</div>
+<div  id="00-08-07" class="function">bool NOE_ColisionCajaMapaColision(int pX1, int pY1, int ancho1, int alto1)</div>
+<div  id="00-08-08" class="function">bool NOE_ColisionDiscoMapaColision(int pX1, int pY1, int radio1)</div>
+
+<h2 id="00-09-00">Controles</h2>
+<div  id="00-09-01" class="function">bool NOE_ObtenTeclaPulsada(NOE_Tecla tecla)</div>
+<div class="definition">
+<p>Permite consultar si la tecla estaba pulsada en la última llamada a NOE_Actualiza</p>
+<p class="params">Parámetros:</p>
+<p class="param">tecla: Tecla cuyo estado queremos consultar.</p>
+<p class="returns">Devuelve:</p>
+<p class="return">Cierto si la tecla estaba pulsada.</p>
+<p class="return">Falso si no.</p>
+</div>
+<div  id="00-09-02" class="function">bool NOE_ObtenTeclaArriba(NOE_Tecla tecla)</div>
+<div class="definition">
+<p>Permite consultar si la tecla ha dejado de estar pulsada en la última llamada a NOE_Actualiza</p>
+<p class="params">Parámetros:</p>
+<p class="param">tecla: Tecla cuyo estado queremos consultar.</p>
+<p class="returns">Devuelve:</p>
+<p class="return">Cierto si la tecla ha dejado de estar pulsada.</p>
+<p class="return">Falso si no.</p>
+</div>
+<div  id="00-09-03" class="function">bool NOE_ObtenTeclaAbajo(NOE_Tecla tecla)</div>
+<div class="definition">
+<p>Permite consultar si la tecla ha pasado de no estar pulsada a estar pulsada en la última llamada a NOE_Actualiza</p>
+<p class="params">Parámetros:</p>
+<p class="param">tecla: Tecla cuyo estado queremos consultar.</p>
+<p class="returns">Devuelve:</p>
+<p class="return">Cierto si la tecla ha pasado a estar pulsada.</p>
+<p class="return">Falso si no.</p>
+</div>
+<div  id="00-09-04" class="function">int  NOE_ObtenPosicionRatonX()</div>
+<div class="definition">
+<p>Permite consultar la posición x en que estaba el ratón en la última llamada a NOE_Actualiza</p>
+<p class="returns">Devuelve:</p>
+<p class="return">Posición x del ratón en coordenadas de pantalla.</p>
+</div>
+<div  id="00-09-05" class="function">int  NOE_ObtenPosicionRatonY()</div>
+<div class="definition">
+<p>Permite consultar la posición y en que estaba el ratón en la última llamada a NOE_Actualiza</p>
+<p class="returns">Devuelve:</p>
+<p class="return">Posición y del ratón en coordenadas de pantalla.</p>
+</div>
+<div  id="00-09-06" class="function">int  NOE_ObtenDesplazamientoRatonX()</div>
+<div class="definition">
+<p>Permite consultar el desplazamiento en x del ratón entre la última llamada a NOE_Actualiza y la penúltima.</p>
+<p class="returns">Devuelve:</p>
+<p class="return">Desplazamiento en x del ratón en coordenadas de pantalla.</p>
+</div>
+<div  id="00-09-07" class="function">int  NOE_ObtenDesplazamientoRatonY()</div>
+<div class="definition">
+<p>Permite consultar el desplazamiento en y del ratón entre la última llamada a NOE_Actualiza y la penúltima.</p>
+<p class="returns">Devuelve:</p>
+<p class="return">Desplazamiento en y del ratón en coordenadas de pantalla.</p>
+</div>
+<div  id="00-09-08" class="function">bool NOE_ObtenBotonRaton(NOE_BotonRaton boton)</div>
+<div class="definition">
+<p>Permite consultar si el botón del ratón estaba pulsado en la última llamada a NOE_Actualiza</p>
+<p class="params">Parámetros:</p>
+<p class="param">boton: Botón cuyo estado queremos consultar.</p>
+<p class="returns">Devuelve:</p>
+<p class="return">Cierto si el botón estaba pulsado.</p>
+<p class="return">Falso si no.</p>
+</div>
+<h2 id="00-10-00">Sonido</h2>
+<div  id="00-10-01" class="function">void NOE_ReproduceMusica(int musica, int volumen, int pitch)</div>
+<div class="definition">
+<p>Reproduce una música interrumpiendo la música que estuviese reproduciéndose anteriormente, si la hubiese.</p>
+<p class="params">Parámetros:</p>
+<p class="param">musica: Índice de la música que queremos reproducir.</p>
+<p class="param">volumen: Volumen entre 0 y 100 con que queremos reproducir la música.</p>
+<p class="param">pitch: Frecuencia con que queremos reproducir la música, siendo 100 la frecuencia normal.</p>
+</div>
+<div  id="00-10-02" class="function">void NOE_ParaMusica()</div>
+<div class="definition">
+<p>Detiene la música en reproducción, si la hubiese.</p>
+</div>
+<div  id="00-10-03" class="function">int NOE_ReproduceSonido(int sonido, int volumen, int pitch)</div>
+<div class="definition">
+<p>Reproduce un sonido utilizando el primer canal libre disponible.</p>
+<p class="params">Parámetros:</p>
+<p class="param">sonido: Índice del sonido que queremos reproducir.</p>
+<p class="param">volumen: Volumen entre 0 y 100 con que queremos reproducir el sonido.</p>
+<p class="param">pitch: Frecuencia con que queremos reproducir el sonido, siendo 100 la frecuencia normal.</p>
+<p class="returns">Devuelve:</p>
+<p class="return">El índice del canal, si se ha encontrado un canal libre.</p>
+<p class="return">-1 si no.</p>
+</div>
+<div  id="00-10-04" class="function">void NOE_ParaSonido(int canal)</div>
+<div class="definition">
+<p>Detiene un sonido en reproducción.</p>
+<p class="params">Parámetros:</p>
+<p class="param">canal: Índice del canal en que se está reproduciendo el sonido.</p>
+</div>
+<h2 id="00-11-00">Datos</h2>
+<div  id="00-11-01" class="function">int NOE_ObtenNumeroDatasets()</div>
+<div class="definition">
+<p>Devuelve el número de datasets disponibles.</p>
+<p class="returns">Devuelve:</p>
+<p class="return">Número de datasets disponibles.</p>
+</div>
+<div  id="00-11-02" class="function">void NOE_RedimensionaDataset(int indiceDataset, int tamanyoMinimo)</div>
+<div class="definition">
+<p>Cambia el tamaño de un dataset.</p>
+<p>Si el nuevo tamaño es mayor que el anterior, se rellenan con ceros los bytes añadidos, mientras que los anteriores mantienen su valor.</p>
+<p>Si nuevo tamaño es menor, los bytes con offsets iguales o mayores que el nuevo tamaño pueden ser descartados y los bytes con offsets menores mantienen su valor.</p>
+<p class="params">Parámetros:</p>
+<p class="param">dataset: Índice del dataset que queremos redimensionar.</p>
+<p class="param">tamanyoMinimo: Nuevo tamaño en bytes que tendrá el dataset como mínimo.</p>
+</div>
+<div  id="00-11-03" class="function">int NOE_ObtenTamanyoDataset(int dataset)</div>
+<div class="definition">
+<p>Permite consultar el tamaño de un dataset.</p>
+<p class="params">Parámetros:</p>
+<p class="param">dataset: Índice del dataset cuyo tamaño queremos consultar.</p>
+<p class="returns">Devuelve:</p>
+<p class="return">El tamaño del dataset en bytes.</p>
+</div>
+<div  id="00-11-04" class="function">void NOE_LimpiaDataset(int dataset, int desde, int hasta)</div>
+<div class="definition">
+<p>Pone un intervalo de bytes de un dataset a 0.</p>
+<p class="params">Parámetros:</p>
+<p class="param">dataset: Índice del dataset que queremos limpiar.</p>
+<p class="param">desde: Desplazamiento en bytes a partir del cual queremos limpiar.</p>
+<p class="param">hasta: Desplazamiento en bytes hasta el que queremos limpiar, incluído o -1 si se quiere limpiar hasta el final.</p>
+</div>
+<div  id="00-11-05" class="function">void NOE_CopiaDataset(int datasetOrigen, int origenDesde, int origenHasta, int destinoHasta)</div>
+<div class="definition">
+<p>Copia un intervalo de bytes de un dataset de origen a otro de destino, que puede ser el mismo.</p>
+<p>Si el dataset de origen y destino es el mismo, los intervalos se pueden solapar.</p>
+<p class="params">Parámetros:</p>
+<p class="param">datasetOrigen: Índice del dataset que contiene los bytes a copiar.</p>
+<p class="param">datasetDestino: Índice del dataset en que se copiarán los bytes.</p>
+<p class="param">origenDesde: Desplazamiento en el dataset de origen del primer byte a copiar.</p>
+<p class="param">origenHasta: Desplazamiento en el dataset de origen del último byte a copiar.</p>
+<p class="param">destinoDesde: Desplazamiento en el dataset de destino en que se copiará el primer byte.</p>
+</div>
+<div  id="00-11-06" class="function">void NOE_RecuperaDatosDataset(int dataset, int desde, int hasta, void* bytes)</div>
+<div class="definition">
+<p>Recupera un intervalo de bytes almacenado en un dataset.</p>
+<p class="params">Parámetros:</p>
+<p class="param">dataset: Índice del dataset que almacena el intervalo de bytes.</p>
+<p class="param">desde: Desplazamiento en bytes dentro del dataset en que está el primer byte del intervalo.</p>
+<p class="param">hasta: Desplazamiento en bytes dentro del dataset en que está el último byte del intervalo.</p>
+<p class="param">bytes: Dirección a partir de la cual se dejarán los bytes recuperados.</p>
+</div>
+<div  id="00-11-07" class="function">void NOE_AlmacenaDatosDataset(int dataset, int desde, int hasta, const void* bytes)</div>
+<div class="definition">
+<p>Almacena un intervalo de bytes en un dataset, redimensionándolo si es necesario</p>
+<p class="params">Parámetros:</p>
+<p class="param">dataset: Índice del dataset en que se almacenará el intervalo de bytes.</p>
+<p class="param">desde: Desplazamiento en bytes dentro del dataset en que se almacenará el primer byte.</p>
+<p class="param">hasta: Desplazamiento en bytes dentro del dataset en que se almacenará el último byte.</p>
+<p class="param">bytes: Dirección en que están los bytes a almacenar.</p>
+</div>
+<div  id="00-11-08" class="function">int NOE_RecuperaEnteroDataset(int dataset, int offset)</div>
+<div class="definition">
+<p>Recupera un entero almacenado en un dataset.</p>
+<p class="params">Parámetros:</p>
+<p class="param">dataset: Índice del dataset que almacena el entero.</p>
+<p class="param">offset: Desplazamiento en bytes dentro del dataset en que está el primer byte del entero.</p>
+<p class="returns">Devuelve:</p>
+<p class="return">El numero almacenado en el dataset.</p>
+</div>
+<div  id="00-11-09" class="function">void NOE_AlmacenaEnteroDataset(int dataset, int offset, int valor)</div>
+<div class="definition">
+<p>Almacena un entero en un dataset.</p>
+<p class="params">Parámetros:</p>
+<p class="param">dataset: Índice del dataset en que se almacenará el número entero.</p>
+<p class="param">offset: Desplazamiento en bytes en que se almacenará el primer byte del entero.</p>
+<p class="param">valor: Número entero que se almacenará.</p>
+</div>
+<div  id="00-11-10" class="function">void NOE_RecuperaTextoDataset(int dataset, int offset, char texto[])</div>
+<div class="definition">
+<p>Recupera una cadena de texto almacenada en un dataset.</p>
+<p class="params">Parámetros:</p>
+<p class="param">dataset: Índice del dataset que almacena el texto.</p>
+<p class="param">offset: Desplazamiento en bytes dentro del dataset en que está el primer byte del texto.</p>
+<p class="param">texto: Cadena de texto en que se copiará el texto recuperado.</p>
+</div>
+<div  id="00-11-11" class="function">void NOE_AlmacenaTextoDataset(int dataset, int offset, int dataset, int offset, const char texto[])</div>
+<div class="definition">
+<p>Almacena una cadena de texto en un dataset.</p>
+<p class="params">Parámetros:</p>
+<p class="param">dataset: Índice del dataset en que se almacenará el texto.</p>
+<p class="param">offset: Desplazamiento en bytes en que se almacenará el primer byte del texto.</p>
+<p class="param">texto: Cadena de texto que se almacenará.</p>
+</div>
+<div  id="00-11-12" class="function">void NOE_GuardaDatasetAhora(int dataset)</div>
+<div class="definition">
+<p>Fuerza que el dataset se guarde en disco inmediatamente.</p>
+<p class="params">Parámetros:</p>
+<p class="param">dataset: Índice del dataset que se guardará en disco inmediatamente.</p>
+</div>
+<div  id="00-11-13" class="function">void NOE_ImprimeDataset(int dataset, bool modoTexto)</div>
+<div class="definition">
+<p>Imprime los contenidos de un dataset.</p>
+<p class="params">Parámetros:</p>
+<p class="param">dataset: Índice del dataset que se imprimirá.</p>
+<p class="param">modoTexto: Cierto si el dataset se imprimirá en modo texto y falso si no.</p>
+</div>
+<h1 id="01">Licencias</h1>
+<h2 id="01-01-00">Librería</h2>
+<pre>
++----------------------------------------------------------------------+
+|                                                                      |
+|                           LICENSE                                    |
+|                                                                      |
+|     Attribution-NonCommercial-NoDerivatives 4.0 International        |
+|                                                                      |
++----------------------------------------------------------------------+
+
+
+Creative Commons Corporation ("Creative Commons") is not a law firm and
+does not provide legal services or legal advice. Distribution of
+Creative Commons public licenses does not create a lawyer-client or
+other relationship. Creative Commons makes its licenses and related
+information available on an "as-is" basis. Creative Commons gives no
+warranties regarding its licenses, any material licensed under their
+terms and conditions, or any related information. Creative Commons
+disclaims all liability for damages resulting from their use to the
+fullest extent possible.
+
+Using Creative Commons Public Licenses
+
+Creative Commons public licenses provide a standard set of terms and
+conditions that creators and other rights holders may use to share
+original works of authorship and other material subject to copyright
+and certain other rights specified in the public license below. The
+following considerations are for informational purposes only, are not
+exhaustive, and do not form part of our licenses.
+
+     Considerations for licensors: Our public licenses are
+     intended for use by those authorized to give the public
+     permission to use material in ways otherwise restricted by
+     copyright and certain other rights. Our licenses are
+     irrevocable. Licensors should read and understand the terms
+     and conditions of the license they choose before applying it.
+     Licensors should also secure all rights necessary before
+     applying our licenses so that the public can reuse the
+     material as expected. Licensors should clearly mark any
+     material not subject to the license. This includes other CC-
+     licensed material, or material used under an exception or
+     limitation to copyright. More considerations for licensors:
+    wiki.creativecommons.org/Considerations_for_licensors
+
+     Considerations for the public: By using one of our public
+     licenses, a licensor grants the public permission to use the
+     licensed material under specified terms and conditions. If
+     the licensor's permission is not necessary for any reason--for
+     example, because of any applicable exception or limitation to
+     copyright--then that use is not regulated by the license. Our
+     licenses grant only permissions under copyright and certain
+     other rights that a licensor has authority to grant. Use of
+     the licensed material may still be restricted for other
+     reasons, including because others have copyright or other
+     rights in the material. A licensor may make special requests,
+     such as asking that all changes be marked or described.
+     Although not required by our licenses, you are encouraged to
+     respect those requests where reasonable. More considerations
+     for the public:
+    wiki.creativecommons.org/Considerations_for_licensees
+
+--------------------------------------------------------------------------
+
+Creative Commons Attribution-NonCommercial-NoDerivatives 4.0
+International Public License
+
+By exercising the Licensed Rights (defined below), You accept and agree
+to be bound by the terms and conditions of this Creative Commons
+Attribution-NonCommercial-NoDerivatives 4.0 International Public
+License ("Public License"). To the extent this Public License may be
+interpreted as a contract, You are granted the Licensed Rights in
+consideration of Your acceptance of these terms and conditions, and the
+Licensor grants You such rights in consideration of benefits the
+Licensor receives from making the Licensed Material available under
+these terms and conditions.
+
+
+Section 1 -- Definitions.
+
+  a. Adapted Material means material subject to Copyright and Similar
+     Rights that is derived from or based upon the Licensed Material
+     and in which the Licensed Material is translated, altered,
+     arranged, transformed, or otherwise modified in a manner requiring
+     permission under the Copyright and Similar Rights held by the
+     Licensor. For purposes of this Public License, where the Licensed
+     Material is a musical work, performance, or sound recording,
+     Adapted Material is always produced where the Licensed Material is
+     synched in timed relation with a moving image.
+
+  b. Copyright and Similar Rights means copyright and/or similar rights
+     closely related to copyright including, without limitation,
+     performance, broadcast, sound recording, and Sui Generis Database
+     Rights, without regard to how the rights are labeled or
+     categorized. For purposes of this Public License, the rights
+     specified in Section 2(b)(1)-(2) are not Copyright and Similar
+     Rights.
+
+  c. Effective Technological Measures means those measures that, in the
+     absence of proper authority, may not be circumvented under laws
+     fulfilling obligations under Article 11 of the WIPO Copyright
+     Treaty adopted on December 20, 1996, and/or similar international
+     agreements.
+
+  d. Exceptions and Limitations means fair use, fair dealing, and/or
+     any other exception or limitation to Copyright and Similar Rights
+     that applies to Your use of the Licensed Material.
+
+  e. Licensed Material means the artistic or literary work, database,
+     or other material to which the Licensor applied this Public
+     License.
+
+  f. Licensed Rights means the rights granted to You subject to the
+     terms and conditions of this Public License, which are limited to
+     all Copyright and Similar Rights that apply to Your use of the
+     Licensed Material and that the Licensor has authority to license.
+
+  g. Licensor means the individual(s) or entity(ies) granting rights
+     under this Public License.
+
+  h. NonCommercial means not primarily intended for or directed towards
+     commercial advantage or monetary compensation. For purposes of
+     this Public License, the exchange of the Licensed Material for
+     other material subject to Copyright and Similar Rights by digital
+     file-sharing or similar means is NonCommercial provided there is
+     no payment of monetary compensation in connection with the
+     exchange.
+
+  i. Share means to provide material to the public by any means or
+     process that requires permission under the Licensed Rights, such
+     as reproduction, public display, public performance, distribution,
+     dissemination, communication, or importation, and to make material
+     available to the public including in ways that members of the
+     public may access the material from a place and at a time
+     individually chosen by them.
+
+  j. Sui Generis Database Rights means rights other than copyright
+     resulting from Directive 96/9/EC of the European Parliament and of
+     the Council of 11 March 1996 on the legal protection of databases,
+     as amended and/or succeeded, as well as other essentially
+     equivalent rights anywhere in the world.
+
+  k. You means the individual or entity exercising the Licensed Rights
+     under this Public License. Your has a corresponding meaning.
+
+
+Section 2 -- Scope.
+
+  a. License grant.
+
+       1. Subject to the terms and conditions of this Public License,
+          the Licensor hereby grants You a worldwide, royalty-free,
+          non-sublicensable, non-exclusive, irrevocable license to
+          exercise the Licensed Rights in the Licensed Material to:
+
+            a. reproduce and Share the Licensed Material, in whole or
+               in part, for NonCommercial purposes only; and
+
+            b. produce and reproduce, but not Share, Adapted Material
+               for NonCommercial purposes only.
+
+       2. Exceptions and Limitations. For the avoidance of doubt, where
+          Exceptions and Limitations apply to Your use, this Public
+          License does not apply, and You do not need to comply with
+          its terms and conditions.
+
+       3. Term. The term of this Public License is specified in Section
+          6(a).
+
+       4. Media and formats; technical modifications allowed. The
+          Licensor authorizes You to exercise the Licensed Rights in
+          all media and formats whether now known or hereafter created,
+          and to make technical modifications necessary to do so. The
+          Licensor waives and/or agrees not to assert any right or
+          authority to forbid You from making technical modifications
+          necessary to exercise the Licensed Rights, including
+          technical modifications necessary to circumvent Effective
+          Technological Measures. For purposes of this Public License,
+          simply making modifications authorized by this Section 2(a)
+          (4) never produces Adapted Material.
+
+       5. Downstream recipients.
+
+            a. Offer from the Licensor -- Licensed Material. Every
+               recipient of the Licensed Material automatically
+               receives an offer from the Licensor to exercise the
+               Licensed Rights under the terms and conditions of this
+               Public License.
+
+            b. No downstream restrictions. You may not offer or impose
+               any additional or different terms or conditions on, or
+               apply any Effective Technological Measures to, the
+               Licensed Material if doing so restricts exercise of the
+               Licensed Rights by any recipient of the Licensed
+               Material.
+
+       6. No endorsement. Nothing in this Public License constitutes or
+          may be construed as permission to assert or imply that You
+          are, or that Your use of the Licensed Material is, connected
+          with, or sponsored, endorsed, or granted official status by,
+          the Licensor or others designated to receive attribution as
+          provided in Section 3(a)(1)(A)(i).
+
+  b. Other rights.
+
+       1. Moral rights, such as the right of integrity, are not
+          licensed under this Public License, nor are publicity,
+          privacy, and/or other similar personality rights; however, to
+          the extent possible, the Licensor waives and/or agrees not to
+          assert any such rights held by the Licensor to the limited
+          extent necessary to allow You to exercise the Licensed
+          Rights, but not otherwise.
+
+       2. Patent and trademark rights are not licensed under this
+          Public License.
+
+       3. To the extent possible, the Licensor waives any right to
+          collect royalties from You for the exercise of the Licensed
+          Rights, whether directly or through a collecting society
+          under any voluntary or waivable statutory or compulsory
+          licensing scheme. In all other cases the Licensor expressly
+          reserves any right to collect such royalties, including when
+          the Licensed Material is used other than for NonCommercial
+          purposes.
+
+
+Section 3 -- License Conditions.
+
+Your exercise of the Licensed Rights is expressly made subject to the
+following conditions.
+
+  a. Attribution.
+
+       1. If You Share the Licensed Material, You must:
+
+            a. retain the following if it is supplied by the Licensor
+               with the Licensed Material:
+
+                 i. identification of the creator(s) of the Licensed
+                    Material and any others designated to receive
+                    attribution, in any reasonable manner requested by
+                    the Licensor (including by pseudonym if
+                    designated);
+
+                ii. a copyright notice;
+
+               iii. a notice that refers to this Public License;
+
+                iv. a notice that refers to the disclaimer of
+                    warranties;
+
+                 v. a URI or hyperlink to the Licensed Material to the
+                    extent reasonably practicable;
+
+            b. indicate if You modified the Licensed Material and
+               retain an indication of any previous modifications; and
+
+            c. indicate the Licensed Material is licensed under this
+               Public License, and include the text of, or the URI or
+               hyperlink to, this Public License.
+
+          For the avoidance of doubt, You do not have permission under
+          this Public License to Share Adapted Material.
+
+       2. You may satisfy the conditions in Section 3(a)(1) in any
+          reasonable manner based on the medium, means, and context in
+          which You Share the Licensed Material. For example, it may be
+          reasonable to satisfy the conditions by providing a URI or
+          hyperlink to a resource that includes the required
+          information.
+
+       3. If requested by the Licensor, You must remove any of the
+          information required by Section 3(a)(1)(A) to the extent
+          reasonably practicable.
+
+
+Section 4 -- Sui Generis Database Rights.
+
+Where the Licensed Rights include Sui Generis Database Rights that
+apply to Your use of the Licensed Material:
+
+  a. for the avoidance of doubt, Section 2(a)(1) grants You the right
+     to extract, reuse, reproduce, and Share all or a substantial
+     portion of the contents of the database for NonCommercial purposes
+     only and provided You do not Share Adapted Material;
+
+  b. if You include all or a substantial portion of the database
+     contents in a database in which You have Sui Generis Database
+     Rights, then the database in which You have Sui Generis Database
+     Rights (but not its individual contents) is Adapted Material; and
+
+  c. You must comply with the conditions in Section 3(a) if You Share
+     all or a substantial portion of the contents of the database.
+
+For the avoidance of doubt, this Section 4 supplements and does not
+replace Your obligations under this Public License where the Licensed
+Rights include other Copyright and Similar Rights.
+
+
+Section 5 -- Disclaimer of Warranties and Limitation of Liability.
+
+  a. UNLESS OTHERWISE SEPARATELY UNDERTAKEN BY THE LICENSOR, TO THE
+     EXTENT POSSIBLE, THE LICENSOR OFFERS THE LICENSED MATERIAL AS-IS
+     AND AS-AVAILABLE, AND MAKES NO REPRESENTATIONS OR WARRANTIES OF
+     ANY KIND CONCERNING THE LICENSED MATERIAL, WHETHER EXPRESS,
+     IMPLIED, STATUTORY, OR OTHER. THIS INCLUDES, WITHOUT LIMITATION,
+     WARRANTIES OF TITLE, MERCHANTABILITY, FITNESS FOR A PARTICULAR
+     PURPOSE, NON-INFRINGEMENT, ABSENCE OF LATENT OR OTHER DEFECTS,
+     ACCURACY, OR THE PRESENCE OR ABSENCE OF ERRORS, WHETHER OR NOT
+     KNOWN OR DISCOVERABLE. WHERE DISCLAIMERS OF WARRANTIES ARE NOT
+     ALLOWED IN FULL OR IN PART, THIS DISCLAIMER MAY NOT APPLY TO YOU.
+
+  b. TO THE EXTENT POSSIBLE, IN NO EVENT WILL THE LICENSOR BE LIABLE
+     TO YOU ON ANY LEGAL THEORY (INCLUDING, WITHOUT LIMITATION,
+     NEGLIGENCE) OR OTHERWISE FOR ANY DIRECT, SPECIAL, INDIRECT,
+     INCIDENTAL, CONSEQUENTIAL, PUNITIVE, EXEMPLARY, OR OTHER LOSSES,
+     COSTS, EXPENSES, OR DAMAGES ARISING OUT OF THIS PUBLIC LICENSE OR
+     USE OF THE LICENSED MATERIAL, EVEN IF THE LICENSOR HAS BEEN
+     ADVISED OF THE POSSIBILITY OF SUCH LOSSES, COSTS, EXPENSES, OR
+     DAMAGES. WHERE A LIMITATION OF LIABILITY IS NOT ALLOWED IN FULL OR
+     IN PART, THIS LIMITATION MAY NOT APPLY TO YOU.
+
+  c. The disclaimer of warranties and limitation of liability provided
+     above shall be interpreted in a manner that, to the extent
+     possible, most closely approximates an absolute disclaimer and
+     waiver of all liability.
+
+
+Section 6 -- Term and Termination.
+
+  a. This Public License applies for the term of the Copyright and
+     Similar Rights licensed here. However, if You fail to comply with
+     this Public License, then Your rights under this Public License
+     terminate automatically.
+
+  b. Where Your right to use the Licensed Material has terminated under
+     Section 6(a), it reinstates:
+
+       1. automatically as of the date the violation is cured, provided
+          it is cured within 30 days of Your discovery of the
+          violation; or
+
+       2. upon express reinstatement by the Licensor.
+
+     For the avoidance of doubt, this Section 6(b) does not affect any
+     right the Licensor may have to seek remedies for Your violations
+     of this Public License.
+
+  c. For the avoidance of doubt, the Licensor may also offer the
+     Licensed Material under separate terms or conditions or stop
+     distributing the Licensed Material at any time; however, doing so
+     will not terminate this Public License.
+
+  d. Sections 1, 5, 6, 7, and 8 survive termination of this Public
+     License.
+
+
+Section 7 -- Other Terms and Conditions.
+
+  a. The Licensor shall not be bound by any additional or different
+     terms or conditions communicated by You unless expressly agreed.
+
+  b. Any arrangements, understandings, or agreements regarding the
+     Licensed Material not stated herein are separate from and
+     independent of the terms and conditions of this Public License.
+
+
+Section 8 -- Interpretation.
+
+  a. For the avoidance of doubt, this Public License does not, and
+     shall not be interpreted to, reduce, limit, restrict, or impose
+     conditions on any use of the Licensed Material that could lawfully
+     be made without permission under this Public License.
+
+  b. To the extent possible, if any provision of this Public License is
+     deemed unenforceable, it shall be automatically reformed to the
+     minimum extent necessary to make it enforceable. If the provision
+     cannot be reformed, it shall be severed from this Public License
+     without affecting the enforceability of the remaining terms and
+     conditions.
+
+  c. No term or condition of this Public License will be waived and no
+     failure to comply consented to unless expressly agreed to by the
+     Licensor.
+
+  d. Nothing in this Public License constitutes or may be interpreted
+     as a limitation upon, or waiver of, any privileges and immunities
+     that apply to the Licensor or You, including from the legal
+     processes of any jurisdiction or authority.
+
+------------------------------------------------------------------------
+
+Creative Commons is not a party to its public
+licenses. Notwithstanding, Creative Commons may elect to apply one of
+its public licenses to material it publishes and in those instances
+will be considered the “Licensor.” The text of the Creative Commons
+public licenses is dedicated to the public domain under the CC0 Public
+Domain Dedication. Except for the limited purpose of indicating that
+material is shared under a Creative Commons public license or as
+otherwise permitted by the Creative Commons policies published at
+creativecommons.org/policies, Creative Commons does not authorize the
+use of the trademark "Creative Commons" or any other trademark or logo
+of Creative Commons without its prior written consent including,
+without limitation, in connection with any unauthorized modifications
+to any of its public licenses or any other arrangements,
+understandings, or agreements concerning use of licensed material. For
+the avoidance of doubt, this paragraph does not form part of the
+public licenses.
+
+Creative Commons may be contacted at creativecommons.org.
+
+
+<h2 id="01-02-00">Músicas</h2>
++----------------------------------------------------------------------+
+|                                                                      |
+|                   CANCIÓN "Funny song"                               |
+|                                                                      |
+|              Music: https://www.bensound.com                         |
+|                                                                      |
++----------------------------------------------------------------------+
+
+<h2 id="01-03-00">Fuentes</h2>
++----------------------------------------------------------------------+
+|                                                                      |
+|                      FUENTE "Plex"                                   |
+|                                                                      |
+|     Copyright © 2017 IBM Corp. with Reserved Font Name "Plex"        |
+|                                                                      |
++----------------------------------------------------------------------+
+
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+
+
+-----------------------------------------------------------
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+-----------------------------------------------------------
+
+PREAMBLE
+The goals of the Open Font License (OFL) are to stimulate worldwide
+development of collaborative font projects, to support the font creation
+efforts of academic and linguistic communities, and to provide a free and
+open framework in which fonts may be shared and improved in partnership
+with others.
+
+The OFL allows the licensed fonts to be used, studied, modified and
+redistributed freely as long as they are not sold by themselves. The
+fonts, including any derivative works, can be bundled, embedded, 
+redistributed and/or sold with any software provided that any reserved
+names are not used by derivative works. The fonts and derivatives,
+however, cannot be released under any other type of license. The
+requirement for fonts to remain under this license does not apply
+to any document created using the fonts or their derivatives.
+
+DEFINITIONS
+"Font Software" refers to the set of files released by the Copyright
+Holder(s) under this license and clearly marked as such. This may
+include source files, build scripts and documentation.
+
+"Reserved Font Name" refers to any names specified as such after the
+copyright statement(s).
+
+"Original Version" refers to the collection of Font Software components as
+distributed by the Copyright Holder(s).
+
+"Modified Version" refers to any derivative made by adding to, deleting,
+or substituting -- in part or in whole -- any of the components of the
+Original Version, by changing formats or by porting the Font Software to a
+new environment.
+
+"Author" refers to any designer, engineer, programmer, technical
+writer or other person who contributed to the Font Software.
+
+PERMISSION & CONDITIONS
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of the Font Software, to use, study, copy, merge, embed, modify,
+redistribute, and sell modified and unmodified copies of the Font
+Software, subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components,
+in Original or Modified Versions, may be sold by itself.
+
+2) Original or Modified Versions of the Font Software may be bundled,
+redistributed and/or sold with any software, provided that each copy
+contains the above copyright notice and this license. These can be
+included either as stand-alone text files, human-readable headers or
+in the appropriate machine-readable metadata fields within text or
+binary files as long as those fields can be easily viewed by the user.
+
+3) No Modified Version of the Font Software may use the Reserved Font
+Name(s) unless explicit written permission is granted by the corresponding
+Copyright Holder. This restriction only applies to the primary font name as
+presented to the users.
+
+4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+Software shall not be used to promote, endorse or advertise any
+Modified Version, except to acknowledge the contribution(s) of the
+Copyright Holder(s) and the Author(s) or with their explicit written
+permission.
+
+5) The Font Software, modified or unmodified, in part or in whole,
+must be distributed entirely under this license, and must not be
+distributed under any other license. The requirement for fonts to
+remain under this license does not apply to any document created
+using the Font Software.
+
+TERMINATION
+This license becomes null and void if any of the above conditions are
+not met.
+
+DISCLAIMER
+THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+OTHER DEALINGS IN THE FONT SOFTWARE.
+</pre>
+</div>
+</div>
+</div>
+</body>
+</html>
